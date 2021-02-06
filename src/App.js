@@ -23,6 +23,7 @@ function App() {
       {/* <Weather geoLoc={geoLoc} />
       <NASA geoLoc={geoLoc} />
       <Restaurant geoLoc={geoLoc} /> */}
+
     </div>
   );
 }
