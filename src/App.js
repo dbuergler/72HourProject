@@ -1,4 +1,6 @@
-import './App.css';
+import React, {Component} from 'react';
+import {render} from 'react-dom'
+
 
 function App() {
   return (
@@ -7,5 +9,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
