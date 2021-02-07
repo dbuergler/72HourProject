@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {render} from 'react-dom'
+import NASA from './components/NASA';
 
 
 function App() {
@@ -22,9 +23,9 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Weather geoLoc={geoLoc} />
+      {/* <Weather geoLoc={geoLoc} /> */}
       <NASA geoLoc={geoLoc} />
-      <Restaurant geoLoc={geoLoc} /> */}
+      {/*<Restaurant geoLoc={geoLoc} /> */}
 
     </div>
   );
