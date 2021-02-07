@@ -25,8 +25,8 @@ const NASA = (props) => {
         }
     )        
     .then(json => {
-        setImage(json)
-        console.log(json)
+        setImage(json.url)
+        console.log(json.url)
     })
 }
 
