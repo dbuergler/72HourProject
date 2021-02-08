@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {render} from 'react-dom'
-
+import GitHubJobs from './components/GitHubJobs'
 
 function App() {
 
-  const [geoLoc, setGeoLoc] = useState({});
+  const [geoLoc, setGeoLoc] = useState();
 
   useEffect( () => {
     navigator.geolocation.getCurrentPosition(setLoc);
@@ -25,11 +25,10 @@ function App() {
       {/* <Weather geoLoc={geoLoc} />
       <NASA geoLoc={geoLoc} />
       <Restaurant geoLoc={geoLoc} /> */}
+      <GitHubJobs geoLoc={geoLoc}/>
 
     </div>
   );
 }
-
-
 
 export default App;
