@@ -30,10 +30,13 @@ const NASA = (props) => {
     })
 }
 
+
+
     return (
         <div>
             <h1>NASA Image</h1>
             <button onClick={nasaFetch}>Click for Image</button>
+            <img src={Image}></img>
 
             
         </div>
