@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {render} from 'react-dom'
+import GitHubJobs from './components/GitHubJobs';
 import Restaurant from './components/Restaurant';
+
 
 function App() {
 
-  const [geoLoc, setGeoLoc] = useState({});
+  const [geoLoc, setGeoLoc] = useState();
 
   useEffect( () => {
     navigator.geolocation.getCurrentPosition(setLoc);
@@ -21,15 +23,14 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {/* <Weather geoLoc={geoLoc} />
-      <NASA geoLoc={geoLoc} />*/}
+    <div>
+      <GitHubJobs geoLoc={geoLoc}/>
+      <NASA geoLoc={geoLoc} />
       <Restaurant geoLoc={geoLoc} /> 
+
 
     </div>
   );
 }
-
-
 
 export default App;

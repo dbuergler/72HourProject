@@ -1,13 +1,55 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.image_col {
+  display: flex;
+  align-items: center;
+}
+
+.com_logo {
+  width: inherit;
+  padding: 5px;
+  max-width: 100px;
+  align-content: center;
+  margin-left: 10px;
+}
+
+.jobRow {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.job-desc {
+  margin: 20px;
+}
+
+.table_row {
+  padding: 10px 0 10px 0;
+}
+
+.form_row {
+  margin: 10px 0px 10px 50px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.check_group {
+  margin: 0px, 20px, 0px, 0px;
+}
+
+#all-jobs {
+  margin-left: 50px;
 }
