@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const Weather = () => {
+const Restaurant = () => {
   return ( 
     <div>
-      <p>Weather</p>
+      <p>Restaurant</p>
     </div>
    );
 }
  
-export default Weather;
+export default Restaurant;
