@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {render} from 'react-dom'
-
+import Restaurant from './components/Restaurant';
 
 function App() {
 
@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="App">
       {/* <Weather geoLoc={geoLoc} />
-      <NASA geoLoc={geoLoc} />
-      <Restaurant geoLoc={geoLoc} /> */}
+      <NASA geoLoc={geoLoc} />*/}
+      <Restaurant geoLoc={geoLoc} /> 
 
     </div>
   );
