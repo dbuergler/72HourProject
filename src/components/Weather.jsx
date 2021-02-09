@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Faren from './Scales/Faren';
 import Centi from './Scales/Centi';
@@ -5,14 +6,7 @@ import Centi from './Scales/Centi';
 const Weather = (props) => {
     const [showWeather, setShowWeather] = useState(true);
 
-    // useEffect(() => {
-    //     if(props.geoLoc){
-        //     getWeather()
-    // }
-    // }, [props.geoLoc, ]);
-
-
-
+    
     function handleToggle(){
 
         setShowWeather(!showWeather)
@@ -28,4 +22,5 @@ const Weather = (props) => {
     }
 
     
+
 export default Weather;
