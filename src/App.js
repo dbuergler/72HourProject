@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {render} from 'react-dom'
 import GitHubJobs from './components/GitHubJobs';
+import Restaurant from './components/Restaurant';
+
 
 function App() {
 
@@ -22,10 +24,10 @@ function App() {
 
   return (
     <div>
-      {/* <Weather geoLoc={geoLoc} />
-      <NASA geoLoc={geoLoc} />
-      <Restaurant geoLoc={geoLoc} /> */}
       <GitHubJobs geoLoc={geoLoc}/>
+      <NASA geoLoc={geoLoc} />
+      <Restaurant geoLoc={geoLoc} /> 
+
 
     </div>
   );
