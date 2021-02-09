@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { Col, FormGroup, Row, Table, Form, Label, Input } from 'reactstrap';
 import Job from './Job';
 
 const GitHubJobs = (props) => {
 
   const [jobs, setJobs] = useState([]);
+  const [isLocal, setIsLocal] = useState(true);
 
   useEffect(() => {
     console.log(props.geoLoc);
     if(props.geoLoc){
       getJobsList()
     }
-  }, [props.geoLoc]);
+  }, [props.geoLoc, isLocal]);
 
   useEffect(() => {
     if(jobs.length > 0){
@@ -20,15 +22,17 @@ const GitHubJobs = (props) => {
   },[jobs])
 
   function getJobsList() {
-    // let lat = props.geoLoc.latitude;
-    // let lon = props.geoLoc.longitude;
+    let lat = props.geoLoc.latitude;
+    let lon = props.geoLoc.longitude;
 
     // console.log(props.geoLoc.latitude, props.geoLoc.longitude);
+    console.log(isLocal);
+    // let lat = 37;
+    // let lon = -122;
 
-    let lat = 37;
-    let lon = -122;
+    let location = (isLocal) ? `lat=${lat}&long=${lon}` : ''
     
-    let url = `https://efa-cors-anywhere.herokuapp.com/jobs.github.com/positions.json?lat=${lat}&long=${lon}`;
+    let url = `https://efa-cors-anywhere.herokuapp.com/jobs.github.com/positions.json?${location}`;
 
     fetch(url)
     .then((res) => {
@@ -48,14 +52,47 @@ function displayJobs(){
   }))
 }
 
-
+  let headingStyle = 
+    {
+      textAlign:"left",
+      fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+      fontWeight: 'bold',
+      margin: '20px'
+    }
   return ( 
     <>
-      <h1>GitHub Jobs</h1>
-      {jobs.length > 0
-      ? displayJobs()
-      : null
-      } 
+    <Row>
+      <Col> 
+        <h1 style={headingStyle}>GitHub Jobs</h1>
+      </Col>
+    </Row> 
+    <Row> 
+      <Form className='form_row' >
+        <FormGroup check>
+          <Label check>
+            <Input type="radio" name='job-radio' onChange={()=>{setIsLocal(true)}}/> Local Jobs
+          </Label>
+        </FormGroup>
+        <FormGroup check id='all-jobs'>
+          <Label check>
+            <Input type="radio" name='job-radio' onChange={()=>{setIsLocal(false)}}/> All Jobs
+          </Label>
+        </FormGroup>
+      </Form> 
+    </Row>
+    <Row> 
+      <Col> 
+        <Table striped>
+          <thead>
+          </thead>
+            <tbody>
+              {jobs.length > 0 ? displayJobs(): null} 
+            </tbody>
+        </Table>
+      </Col>
+    </Row>
+
+
     </>
    );
 }

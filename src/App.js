@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {render} from 'react-dom'
-import GitHubJobs from './components/GitHubJobs'
+import GitHubJobs from './components/GitHubJobs';
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div>
       {/* <Weather geoLoc={geoLoc} />
       <NASA geoLoc={geoLoc} />
       <Restaurant geoLoc={geoLoc} /> */}

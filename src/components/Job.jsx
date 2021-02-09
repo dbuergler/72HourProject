@@ -7,14 +7,14 @@ const Job = (props) => {
   let toggleId = "job" + props.index;
   let toggleSelector = "#job" + props.index;
   return ( 
-      <div key={props.job.id}>
+      <tr key={props.job.id} className='table_row'>
         <Row class="jobRow">
-          <Col md="2">
-          <img src={props.job.company_logo} alt={props.job.company} class="com_logo"/>
+          <Col md="2" className="image_col">
+            <img src={props.job.company_logo} alt={props.job.company} class="com_logo"/>
           </Col>
           <Col md="8">
             <Row> 
-              <h3><strong>{props.job.title}</strong> </h3>
+              <h4><a href={props.job.url} target="_blank"><strong>{props.job.title}</strong> </a></h4>
             </Row>
             <Row> 
               <Col md="5"><p><strong>Company:</strong> {props.job.company}</p></Col>
@@ -32,13 +32,12 @@ const Job = (props) => {
           <UncontrolledCollapse toggler={toggleSelector}>
             <Card>
               <CardBody>
-                <div>{ReactHtmlParser(props.job.description)}</div>
+                <div className='job-desc'>{ReactHtmlParser(props.job.description)}</div>
               </CardBody>
             </Card>
           </UncontrolledCollapse>
         </Row>
-        
-      </div>
+      </tr>
 
 
    );
