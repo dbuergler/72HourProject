@@ -3,24 +3,33 @@ import React, { useEffect, useState } from 'react';
 const NASA = (props) => {
     const [Image, setImage] = useState();
     
+    
     useEffect(() => {
-        nasaFetch();
-    }, []);
+        console.log(props.geoLoc);
+        if(props.geoLoc){
+            nasaFetch();
+        }
+    }, [props.geoLoc]);
     
     function nasaFetch (){
         
-        console.log(props.geoLoc.latitude, props.geoLoc.longitude);
+        
+        let lat = props.geoLoc.latitude;
+        let lon = props.geoLoc.longitude;
+        
+        //let date = new Date();
+        //date = date.toISOString();
+        //date = date.slice(0,10);
+        
+        let date = "2016-01-01";
+        let dim = .40;
 
-        let lat = 29.78;
-        let lon = 95.33;
-        let date = "2018-01-01";
         let api_key = "HoY90UWi3PmKbKlRFevPRZNJq1nVe5b9LgN4fCWH"
         
-        let url = `https://api.nasa.gov/planetary/earth/assets?lon=${lon}&lat=${lat}&date=${date}&api_key=${api_key}`
+        let url = `https://api.nasa.gov/planetary/earth/assets?lon=${lon}&lat=${lat}&date=${date}&dim=${dim}&api_key=${api_key}`
 
         fetch(url)
         .then((res) => {
-            console.log("Got here")
             return(res.json());
         }
     )        
@@ -31,14 +40,13 @@ const NASA = (props) => {
 }
 
 
-
     return (
         <div>
             <h1>NASA Image</h1>
             <button onClick={nasaFetch}>Click for Image</button>
-            <img src={Image}></img>
-
-            
+            <br></br>
+            <br></br>
+            <img  width= "40%" src={Image}></img>            
         </div>
     );
 };
