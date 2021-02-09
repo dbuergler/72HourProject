@@ -22,7 +22,7 @@ const NASA = (props) => {
         //date = date.slice(0,10);
         
         let date = "2016-01-01";
-        let dim = .40;
+        let dim = .25;
 
         let api_key = "HoY90UWi3PmKbKlRFevPRZNJq1nVe5b9LgN4fCWH"
         
@@ -39,10 +39,9 @@ const NASA = (props) => {
     })
 }
 
-
     return (
         <div>
-            <h1>NASA Image</h1>
+            <h2>NASA Satellite Location</h2>
             <button onClick={nasaFetch}>Click for Image</button>
             <br></br>
             <br></br>
