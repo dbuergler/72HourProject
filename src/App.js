@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {render} from 'react-dom'
+import Weather from './components/Weather'
 import NASA from './components/NASA';
 import GitHubJobs from './components/GitHubJobs';
 import Restaurant from './components/Restaurant';
+
 
 
 
@@ -27,11 +29,12 @@ function App() {
   return (
 
     <div className="App">
-   
+
+      
+      <Weather geoLoc={geoLoc} />
       <GitHubJobs geoLoc={geoLoc}/>
       <NASA geoLoc={geoLoc} />
       <Restaurant geoLoc={geoLoc} /> 
-
 
     </div>
   );
