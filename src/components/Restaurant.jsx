@@ -39,7 +39,7 @@ const Restaurant = (props) => {
 
     return (
         <div>
-            <p>{restaurant}</p>
+            <h4>{restaurant}</h4>
         </div>
     )
 }

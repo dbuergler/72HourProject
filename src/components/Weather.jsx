@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Faren from './Scales/Faren';
 import Centi from './Scales/Centi';
+import {Button, CardText, Card} from 'reactstrap'
 
 const Weather = (props) => {
     const [showWeather, setShowWeather] = useState(true);
@@ -14,9 +15,11 @@ const Weather = (props) => {
 
     return (
         <div>
-
-            {showWeather === true ? <Faren  geoLoc={props.geoLoc}/> : <Centi  geoLoc={props.geoLoc}/>}
-            <button onClick= {handleToggle}>Switch Temp Scale</button>
+            
+            <h5>{showWeather === true ? <Faren  geoLoc={props.geoLoc}/> : <Centi  geoLoc={props.geoLoc}/>}</h5>
+            
+            <Button onClick= {handleToggle}>Switch Temp Scale</Button>
+            
         </div>
     )
     }

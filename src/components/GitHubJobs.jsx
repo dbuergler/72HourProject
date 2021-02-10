@@ -61,11 +61,11 @@ function displayJobs(){
     }
   return ( 
     <>
-    <Row>
+    {/* <Row>
       <Col> 
-        <h1 style={headingStyle}>GitHub Jobs</h1>
+        <h3 style={headingStyle}>GitHub Jobs</h3>
       </Col>
-    </Row> 
+    </Row>  */}
     <Row> 
       <Form className='form_row' >
         <FormGroup check>
