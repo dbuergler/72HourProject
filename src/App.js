@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {render} from 'react-dom'
+
 import Weather from './components/Weather'
 import NASA from './components/NASA';
 import GitHubJobs from './components/GitHubJobs';
@@ -9,10 +10,9 @@ import './index.js';
 
 
 
-
 function App() {
 
-  const [geoLoc, setGeoLoc] = useState();
+  const [geoLoc, setGeoLoc] = useState({});
 
   useEffect( () => {
     navigator.geolocation.getCurrentPosition(setLoc);
@@ -55,10 +55,6 @@ function App() {
           <Weather geoLoc={geoLoc}/>
         </CardBody>
       </Card>
-
-      
-    
-
     </div>
   );
 }

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Faren from './Scales/Faren';
 import Centi from './Scales/Centi';
