@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Button} from 'reactstrap'
 
 const NASA = (props) => {
     const [Image, setImage] = useState();
@@ -42,7 +43,7 @@ const NASA = (props) => {
     return (
         <div>
             <h2>NASA Satellite Location</h2>
-            <button onClick={nasaFetch}>Click for Image</button>
+            <Button onClick={nasaFetch}>Click for Image</Button>
             <br></br>
             <br></br>
             <img  width= "40%" src={Image}></img>            
